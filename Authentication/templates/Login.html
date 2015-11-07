@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+<title>{% block title %}Login{% endblock %}</title>
+{% block content %}
+<div class="login_box"> {% if messages %}
+  {% for message in messages %}
+   
+      
+    <span id="err">{{ message }}</span> 
+   
+  {% endfor %}
+{% endif %}<form method="post" action=".">{% csrf_token %}
+	<span class="lbh"><center><i>BavBooks</i></center></span>
+        <p class="in1"><label class='lgo'>Username:</label><br/><input type="text" name="username" value="" placeholder="Username" class="in1 form-control"></p>
+        <p class="in1"><label class='lgo'>Password:</label><br/><input type="password" name="password" value="" placeholder="Password" class="in1 form-control"></p>
+       <input type="hidden" name="re1" value={{re}}>
+        <p class="submit"><input type="submit" name="commit" value="Login" class='btn-primary btn button'></p>
+         <a href="{% url 'reset' %}" class="btn btn-link btn1  ">Forgot your password?</a>
+      </form>
+      </div>
+
+{% endblock %}

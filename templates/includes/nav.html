@@ -1,0 +1,43 @@
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand na" href="/">BavBooks</a>
+          <button data-target="#navbar-main" data-toggle="collapse" type="button" class="navbar-toggle collapsed" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar-main" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+          <ul class="nav navbar-nav">
+            <li class="na">
+               <a href="/">Home</a>
+            </li>
+          
+           
+         
+             <li class="na">
+               <a href="/WriteWithUs">Write with Us</a>
+            </li>
+            
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+          	{% if user.is_authenticated %}
+          	<li class="na"><a>Welcome &nbsp;{{user.username}}</a> </li>
+            <li class="na"><a  href="/loggedout">log out</a></li>
+          	{% else %}
+            <li class="na"><a  href="/login">Sign In</a></li>
+            <li class="na"><a  href="/register">Register</a></li>
+            {% endif %}
+            <li><form class="navbar-form navbar-left" role="search" action="/search/" method="get">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="search_text">
+        </div>
+        <button type="submit" class="btn btn-default submit button">Submit</button>
+      </form></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>

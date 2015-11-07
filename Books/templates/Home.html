@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+<title>{% block title %}BavBooks{% endblock %}</title>
+{% block content %}
+<ul class="bxslider">
+  <li><img src="{% static 'images/chg.jpg' %}" /></li>
+  <li><img src="{% static 'images/chg.jpg' %}" /></li>
+  <li><img src="{% static 'images/chg.jpg' %}" /></li>
+</ul>
+<div class="new">
+	
+  <h2 class="he">New Books</h2>
+  <div class="slider1">
+    <a class="buttons prev" href="#">&#60;</a>
+    <div class="viewport">
+      <ul class="overview">
+      	
+      {% for Book in Books %}	
+         {%  ifequal Book.Status 'N' %}
+      
+        <li><div class="book"><a title="Image 1" href="/get/{{Book.id}}"><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{Book.Photo}}" class="thumbnail img-responsive1 "></a><p><span class="stars"><span style="width:{% widthratio Book.Rating 1 16 %}px;"></span></span></p><span class="book-title">{{Book.Book_Name}}</span><br /><a class="button"  href="/get/{{Book.id}}/" >Download </a></div></li>
+        
+         {% endifequal %}  
+      {% endfor %} 
+      </ul>
+    </div>
+    <a class="buttons next" href="#">&#62;</a>
+  </div>
+</div>
+<div class="new">
+  <h2 class="he">Highest rated</h2>
+  <div class="slider1">
+    <a class="buttons prev" href="#">&#60;</a>
+    <div class="viewport">
+      <ul class="overview">
+       {% for Book in Books %}	
+         {%  ifequal Book.Status 'H' %}
+        <li><div class="book"><a title="Image 1" href="/get/{Book.id}}/"><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{Book.Photo}}" class="thumbnail img-responsive1 "></a><p><span class="stars"><span style="width: 50px;"></span></span></p><span class="book-title">{{Book.Book_Name}}</span><br /><a class="button">Download </a></div></li>
+         {% endifequal %}  
+      {% endfor %} 
+      </ul>
+    </div>
+    <a class="buttons next" href="#">&#62;</a>
+  </div>
+</div>
+<div class="new">
+  <h2 class="he">Most popular free eBooks</h2>
+  <div class="slider1">
+    <a class="buttons prev" href="#">&#60;</a>
+    <div class="viewport">
+      <ul class="overview">
+       {% for Book in Books %}	
+         {%  ifequal Book.Status 'P' %}
+        <li><div class="book"><a title="Image 1" href="/get/{Book.id}}/"><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{Book.Photo}}" class="thumbnail img-responsive1 "></a><p><span class="stars"><span style="width: 50px;"></span></span></p><span class="book-title">{{Book.Book_Name}}</span><br /><a class="button">Download </a></div></li>
+         {% endifequal %}  
+      {% endfor %} 
+      </ul>
+    </div>
+    <a class="buttons next" href="#">&#62;</a>
+  </div>
+</div>
+{% endblock %}

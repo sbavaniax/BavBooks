@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% load staticfiles %}
+<title>{% block title %}{{Cat}}&nbsp;Books{% endblock %}</title>
+
+{% block content %}
+<h2 class="che">{{Cat}}&nbsp;Books</h2>
+{% for Book in Books.object_list %}
+<br/><div class="row ">
+<div class="col-md-3">
+<a title="Image 1" href="/get/{{Book.id}}"><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{Book.Photo}}" class="thumbnail img-responsive1 "></a>
+</div>
+<div class="col-md-9">
+<span class="book-title"><a href="/get/{{Book.id}}" class="book-title">{{Book.Book_Name}}</a></span><br />
+<p><span class="stars"><span style="width:{% widthratio Book.Rating 1 16 %}px;"></span></span></p>
+<p class="book-title">{{Book.Book_Desc}}&nbsp;<a href="/get/{{Book.id}}">more....</a></p><br/>
+<a class="button"  href="/get/{{Book.id}}/" >Download </a>
+</div>
+</div>
+{% endfor %}
+<ul class = "pagination">
+   <li>{% if Books.has_previous %}<a href ="?page={{ Books.previous_page_number }}"><span class="book-title">Previous &laquo;</span> </a> {% endif %}</li>
+   <li><a href = "#"><span class="book-title">Page&nbsp;{{ Books.number }} of {{ Books.paginator.num_pages }}</span> </a></li>
+   
+   <li>{% if Books.has_next %}<a href = "?page={{ Books.next_page_number }}"><span class="book-title">Next &raquo;</span></a> {% endif %}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+{% load staticfiles %}
+<title>{% block title %}{{MyBok.Book_Name}}{% endblock %}</title>
+{% block content %}
+<h2 class="bhe" align="center">{{MyBok.Book_Name}}</h2>
+<div class="booktitle">
+	<img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{MyBok.Photo}}" class="thumbnail img-responsive">
+
+</div>
+<div class="booktitle">
+	
+<ul class="b1">
+<li class="bhe1"><b >Title&nbsp; : &nbsp;</b>{{MyBok.Book_Name}}</li><br />
+<li class="bhe1"><b>Author(s)&nbsp; : &nbsp;</b> {{MyBok.Author_Name}} </li><br />
+<li class="bhe1"><b>Publisher&nbsp; : &nbsp;</b> {{MyBok.PUB_NAME}}</li><br />
+
+<li class="bhe1"><b>ISBN&nbsp; : &nbsp;</b> {{MyBok.ISBN_NBR}}  </li><br />
+
+
+</ul>
+</div>
+<div class="booktitle">
+<p>
+	<p class="bhe1">{{MyBok.Book_Desc}}</p>
+	<p class="bhe">Download &nbsp; : &nbsp;  <a href="/download/{{MyBok.download_link}}"  >link</a></p>
+</p>
+
+</div>
+
+{% endblock %}

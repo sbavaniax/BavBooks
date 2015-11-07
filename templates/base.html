@@ -1,0 +1,62 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ <title>{% block title %}BavBooks{% endblock %}</title>
+
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='{% static "css/style.css" %}' rel='stylesheet' type='text/css'>
+  <link href='{% static "css/style - responsive.css" %}' rel='stylesheet' type='text/css'>
+  <link href='{% static "css/normalize.css" %}' rel='stylesheet' type='text/css'>
+  <link href='{% static "css/jquery.bxslider.css" %}' rel='stylesheet' type='text/css'>
+  <link href='{% static "css/tinycarousel.css" %}' rel='stylesheet' type='text/css'>
+   <link href='{% static "css/main.css" %}' rel='stylesheet' type='text/css'>
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css">
+ <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <script src='{% static "javascript/jquery.bxslider.min.js" %}'></script>
+  <script src='{% static "javascript/jquery.tinycarousel.js" %}'></script>
+	<script src='{% static "javascript/coursel.js" %}'></script>
+	<script src='{% static "javascript/menu.js" %}'></script>
+	 <script src='{% static "javascript/jui.js" %}'></script>
+	
+  
+
+</head>
+<body>
+	
+<div class="container">
+	
+    {% include 'includes/header.html' %}
+    
+      <div class="primary">
+      	{% include 'includes/cat_responsive.html' %} 
+{% include 'includes/cat1.html' %}   
+  
+ </div>
+
+      <div class="content">
+  {% block content %}Welcome to my block{% endblock %}
+      </div>
+
+     <div class="secondary">
+  23
+      </div>
+    
+    </div>
+
+  {% include 'includes/footer.html' %}       
+   
+</body>
+</html>

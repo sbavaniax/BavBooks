@@ -1,0 +1,47 @@
+
+{% extends "base.html" %}
+{% load staticfiles %}
+<title>{% block title %}Search Results For {{search}}{% endblock %}</title>
+{% block content %}
+<header class="page-header pgh ">
+<h1 class="page-title he3">Search Results For: {{search}}</h1>
+</header>
+{% if length > 0 and red %}
+
+
+{% for n in nam.object_list %}
+<div class="row book-top">
+<div class="col-md-3">
+<a title="Image 1" href="/get/{{n.id}}/"><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{n.Photo}}" class="thumbnail img-responsive1 img-responsive2"></a>
+</div>
+<div class="col-md-9">
+<h3><a href="/get/{{n.id}}/" title="{{n.Book_Name}}" rel="bookmark" class="he1">{{n.Book_Name}}</a></h3>
+
+
+<span class="stars"><span style="width:{% widthratio n.Rating 1 16 %}px;"></span>
+<div class="info bhe1"><p>{{n.Book_Desc}}</p></div>
+
+</div>
+
+<div class="info"><a href="/get/{{n.id}}/" role="button" class="btn btn-info button"><i class="fa fa-download"></i> Download</a></div>
+</div>
+
+{% endfor %}
+
+<ul class = "pagination">
+   <li>{% if nam.has_previous %}<a href ="?page={{ nam.previous_page_number }}"><span class="book-title">Previous &laquo;</span> </a> {% endif %}</li>
+   <li><a href = "#"><span class="book-title">Page&nbsp;{{ nam.number }} of {{ nam.paginator.num_pages }}</span> </a></li>
+   
+   <li>{% if nam.has_next %}<a href = "?page={{ nam.next_page_number }}"><span class="book-title">Next &raquo;</span></a> {% endif %}</li>
+</ul>
+{% else %}
+<div class="row"><h3 class="che">No Results Found </h6></div>
+{% endif %}
+
+
+
+
+
+{% endblock %}
+
+
