@@ -2,10 +2,12 @@
 {% load staticfiles %}
 <title>{% block title %}BavBooks{% endblock %}</title>
 {% block content %}
+{{Coursal}}
 <ul class="bxslider">
-  <li><img src="{% static 'images/chg.jpg' %}" /></li>
-  <li><img src="{% static 'images/chg.jpg' %}" /></li>
-  <li><img src="{% static 'images/chg.jpg' %}" /></li>
+	 {% for Coursal in Coursals %}	
+  <li><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{Coursal.Photo1}}" ></li>
+  <li><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{Coursal.Photo2}}" ></li>
+  {% endfor %}
 </ul>
 <div class="new">
 	
@@ -50,7 +52,7 @@
     <div class="viewport">
       <ul class="overview">
        {% for Book in Books %}	
-         {%  ifequal Book.Status 'P' %}
+         {%  ifequal Book.Status 'M' %}
         <li><div class="book"><a title="Image 1" href="/get/{Book.id}}/"><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{Book.Photo}}" class="thumbnail img-responsive1 "></a><p><span class="stars"><span style="width: 50px;"></span></span></p><span class="book-title">{{Book.Book_Name}}</span><br /><a class="button">Download </a></div></li>
          {% endifequal %}  
       {% endfor %} 

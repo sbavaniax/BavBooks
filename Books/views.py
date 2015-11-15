@@ -4,12 +4,12 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse
 from django.template.loader import get_template
 from django.template import Context
-from Books.models import Book
+from Books.models import Book,Coursal
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def Home(request):
     
-    return render(request,"Home.html",{'Books': Book.objects.all()})
+    return render(request,"Home.html",{'Books': Book.objects.all(),'Coursals':Coursal.objects.all()})
 
 def WriteWithUs(request):
     

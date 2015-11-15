@@ -48,7 +48,7 @@
   height: 40px;
   margin-top: 43%;
 }
-.content .login_box {
+ .login_box {
     background: url("logi.jpg") repeat scroll 0 0 #fff;
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -72,7 +72,7 @@ form {
 
 
 /*Styles for screen 515px and lower*/
-@media only screen and (max-width : 800px) {
+@media only screen and (max-width : 1000px) {
 .btn-info1
 {
 	background-color: #77ccdd !important;
@@ -89,7 +89,7 @@ form {
 	display: none;
 }
 
-.content .login_box {
+ .login_box {
     background: url("logi.jpg") repeat scroll 0 0 #fff;
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);

@@ -1,0 +1,8 @@
+{% load staticfiles %}
+<b style="color:#77ccdd;font-family: Georgia;"><i>Hi,</i></b>
+<p style="color:black;font-family: Georgia;font-style: italic;font-weight: bold;">Check Out Our New Book </p>
+<p style="color:black;font-family: Georgia;font-style: italic;font-weight: bold;"><a href="http://localhost:8080{% url 'Books.views.MyBook' book.id %}">{{book.Book_Name}}</a></p>
+
+<p style="color:black;font-family: Georgia;font-style: italic;font-weight: bold;"><a href="http://localhost:8080{% url 'Books.views.MyBook' book.id %}"><img alt="Generic placeholder thumbnail" src="{% static 'images/' %}{{book.Photo}}" class="thumbnail img-responsive"></a></p>
+<p style="color:black;font-family: Georgia;font-style: italic;font-weight: bold;"><a href="http://localhost:8080{% url 'Books.views.MyBook' book.id %}"><span>{{book.Book_Desc|truncatewords:10}}</span>more...</a></p>
+<p style="color:#77ccdd;font-family: Georgia;font-style: italic;font-weight: bold;">Thanks &amp; Regards<br />BavBooks Team</p>

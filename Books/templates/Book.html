@@ -2,6 +2,11 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 <title>{% block title %}{{MyBok.Book_Name}}{% endblock %}</title>
+{% block meta %}
+ <meta name="description" content={{MyBok.Book_Name}}.{{MyBok.Book_Desc}}>
+ <meta name="keywords" content="free book,free ebooks,textbook, study book, student, calculus, career, e-books, ebooks, economics, physics, chemistry, biology,IT,,English, mathematics, marketing, organisation, organization, statistics, strategy,{{MyBok.Book_Name}}">
+ 
+ {% endblock %}
 {% block content %}
 <h2 class="bhe" align="center">{{MyBok.Book_Name}}</h2>
 <div class="booktitle">

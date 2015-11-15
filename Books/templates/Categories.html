@@ -13,7 +13,7 @@
 <div class="col-md-9">
 <span class="book-title"><a href="/get/{{Book.id}}" class="book-title">{{Book.Book_Name}}</a></span><br />
 <p><span class="stars"><span style="width:{% widthratio Book.Rating 1 16 %}px;"></span></span></p>
-<p class="book-title">{{Book.Book_Desc}}&nbsp;<a href="/get/{{Book.id}}">more....</a></p><br/>
+<p class="book-title">{{Book.Book_Desc|truncatewords:10}}&nbsp;<a href="/get/{{Book.id}}">more....</a></p><br/>
 <a class="button"  href="/get/{{Book.id}}/" >Download </a>
 </div>
 </div>

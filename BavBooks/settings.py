@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'BavBooks.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'bavaniaso$devbavbooks',
-        'USER': 'bavaniaso',
-        'PASSWORD': 'MysqlTeradata2015@Django@TCS',
-        'HOST': 'bavaniaso.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
+        'NAME': 'devbavbooks',
+        'USER': 'devbav01',
+        'PASSWORD': 'devtcswag02#',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
